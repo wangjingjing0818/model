@@ -1,0 +1,216 @@
+@import "reset";
+@import (reference) "public";
+html{
+  font-size:100px;
+}
+html,body,.musecBox{
+  width:100%;
+  height:100%;
+}
+.musecBox{
+  position: relative;
+  overflow: hidden;
+  .musicBg{
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height:100%;
+    background: url('../img/poster.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-filter:blur(10px);
+    filter:blur(10px);
+    transform:scale(1.1);
+    &:after{
+      height:100%;
+      content:'';
+      display: block;
+      background: rgba(0,0,0,.5);
+      z-index: -1;
+    }
+  }
+}
+.header{
+  height:1.2rem;
+  padding:.3rem;
+  background: rgba(0,0,0,.2);
+  position: relative;
+  .base{
+width:4.5rem;
+    img{
+      width:1.2rem;
+      height:1.2rem;
+      display: inline-block;
+      vertical-align: top;
+    }
+    p{
+      display: inline-block;
+      vertical-align: top;
+      span{
+        font-size:.36rem;
+        display:block;
+        color:@color-white;
+        line-height: .6rem;
+      }
+    }
+  }
+  .btn{
+    width:.9rem;
+    height:.9rem;
+    position: absolute;
+    right:.3rem;
+    top:50%;
+    margin-top: -.45rem;
+    border-radius: 50%;
+    border:.02rem solid @color-gray;
+    .play{
+      display: none;
+      width: .33rem;
+      height:.39rem;
+      .spriteFn(@y:-3rem);
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin-left: -.14rem;
+      margin-top: -.19rem;
+      opacity: .5;
+    }
+    .pause{
+      //
+      width: .18rem;
+      height:.3rem;
+      .spriteFn(@y:-3.6rem);
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin-left: -.09rem;
+      margin-top: -.15rem;
+      opacity: .5;
+    }
+  }
+}
+.main{
+  padding:.4rem .2rem;
+  position: relative;
+  overflow: hidden;
+  .lyric{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    text-align: center;
+    p{
+      line-height: .84rem;
+      font-size:.32rem;
+      color:@color-gray;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space:nowrap;
+    }
+    p.on{
+      color:@color-green
+    }
+  }
+}
+.footer{
+  margin:0 .2rem;
+  height:3rem;
+  .storage{
+    position: relative;
+    height:.8rem;
+    a{
+      position: absolute;
+      width:.5rem;
+      height:.44rem;
+      .spriteFn();
+      right:.2rem;
+      top:50%;
+      margin-top:-.22rem;
+      display:block;
+
+    }
+  };
+  .progress{
+    width:100%;
+    height:.8rem;
+    line-height: .8rem;
+    vertical-align: middle;
+    text-align: center;
+    .current,.duration{
+      width: .9rem;
+      height:100%;
+      line-height: .8rem;
+      float:left;
+      font-size:.24rem;
+      color:@color-gray;
+    }
+    .duration{
+      float:right;
+    }
+    .timeLine{
+      width:4.2rem;
+      height:.04rem;
+      background: @color-gray;
+      position: relative;
+      float:left;
+      margin-top: .36rem;
+      span{
+        position: absolute;
+        top:0;
+        left:0;
+        width:.9rem;
+        height:.04rem;
+        background: @color-green;
+      }
+    }
+  }
+  .downLoad{
+    width: 4.4rem;
+    height:.9rem;
+    line-height: .9rem;
+    text-align: center;
+    background: @color-green;
+    margin: 0 auto;
+    border-radius: .45rem;
+    position: relative;
+    i{
+      font-style:normal;
+      font-size:.36rem;
+      color:@color-white;
+      display: block;
+      &:after{
+        display: block;
+        content:'';
+        position: absolute;
+        left:.22rem;
+        top:50%;
+        margin-top:-.33rem;
+        width:.66rem;
+        height:.66rem;
+        .spriteFn(@y:-6rem)
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
